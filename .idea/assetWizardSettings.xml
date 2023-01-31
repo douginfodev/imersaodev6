@@ -79,6 +79,8 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
+                                                <entry key="imagePath" value="C:\ProjetosAndroid\alura\imvdev6\imersaodev6\assets\logoandroid.png" />
+                                                <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -110,7 +112,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundLayerName" value="ic_launcher_logo" />
+                                      <entry key="backgroundAssetType" value="COLOR" />
+                                      <entry key="backgroundColor" value="023843" />
+                                      <entry key="outputName" value="ic_logo_android" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -214,7 +218,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="imagePath" value="C:\ProjetosAndroid\alura\imvdev6\imersaodev6\assets\imersaodevgreen6.png" />
+                                                <entry key="imagePath" value="C:\ProjetosAndroid\alura\imvdev6\imersaodev6\assets" />
                                                 <entry key="scalingPercent" value="83" />
                                               </map>
                                             </option>
@@ -237,7 +241,7 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="IMAGE" />
-                                      <entry key="outputName" value="ic_banner_logo" />
+                                      <entry key="outputName" value="ic_logo_kotlin" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -297,11 +301,6 @@
                                 </PersistentState>
                               </value>
                             </entry>
-                          </map>
-                        </option>
-                        <option name="values">
-                          <map>
-                            <entry key="outputIconType" value="TV_BANNER" />
                           </map>
                         </option>
                       </PersistentState>
