@@ -11,8 +11,33 @@
         android:id="@+id/message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="328dp"
         android:text="@string/powerby"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="553dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="174dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_banner_logo_background" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="220"
+        android:layout_height="70"
+        android:layout_marginTop="52dp"
+        android:src="@color/btn_color_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

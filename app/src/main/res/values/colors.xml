@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="bck_mobile">#023843</color>
+    <color name="btn_color_green">#12BF81</color>
 </resources>
