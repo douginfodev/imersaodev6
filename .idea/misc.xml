@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/ProjetosAndroid/alura/imvdev6/imersaodev6/app/src/main/res/layout/activity_main.xml" value="0.2708333333333333" />
+        <entry key="..\:/ProjetosAndroid/alura/imvdev6/imersaodev6/app/src/main/res/layout/fragment_conversor.xml" value="0.24277749619868222" />
         <entry key="..\:/ProjetosAndroid/alura/imvdev6/imersaodev6/app/src/main/res/layout/fragment_main.xml" value="0.2708333333333333" />
+        <entry key="..\:/ProjetosAndroid/alura/imvdev6/imersaodev6/app/src/main/res/layout/fragment_mentalisar.xml" value="0.24277749619868222" />
+        <entry key="..\:/ProjetosAndroid/alura/imvdev6/imersaodev6/app/src/main/res/layout/principal.xml" value="0.24277749619868222" />
       </map>
     </option>
   </component>
