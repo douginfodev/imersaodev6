@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="txtView_label">
+        <item name="android:fontFamily">@font/roboto_bold_700</item>
+        <item name="android:textColor">@color/green_light_400</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">" "</string>
     <string name="powerby">Powered by:</string>
+
+    //CONVERSOR
+    <string name="titulo_conversor">CONVERSOR</string>
+    <string name="titulo_valor">VALOR A CONVERTER</string>
+    <string name="tit_valconverter">VALOR CONVERTIDO</string>
+    <string name="tit_moeda">Real (R$)</string>
+    <string name="resultado_conversao">100,00</string>
 </resources>
