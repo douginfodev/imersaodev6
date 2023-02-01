@@ -8,4 +8,6 @@
     <string name="tit_valconverter">VALOR CONVERTIDO</string>
     <string name="tit_moeda">Real (R$)</string>
     <string name="resultado_conversao">100,00</string>
+    <string name="tit_dolar">REAL (R$)</string>
+    <string name="tit_real">DOLAR (US$)</string>
 </resources>

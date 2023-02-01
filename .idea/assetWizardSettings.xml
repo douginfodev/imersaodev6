@@ -67,7 +67,9 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
+                                                <entry key="color" value="12bf81" />
                                                 <entry key="imagePath" value="C:\Users\doug\AppData\Local\Temp\ic_android_black_24dp.xml" />
+                                                <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -79,7 +81,6 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\ProjetosAndroid\alura\imvdev6\imersaodev6\assets\logoandroid.png" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
@@ -113,8 +114,11 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="023843" />
-                                      <entry key="outputName" value="ic_logo_android" />
+                                      <entry key="backgroundColor" value="12bf81" />
+                                      <entry key="backgroundLayerName" value="ic_button_background1" />
+                                      <entry key="foregroundAssetType" value="CLIP_ART" />
+                                      <entry key="foregroundLayerName" value="ic_button_foreground1" />
+                                      <entry key="outputName" value="ic_button_background" />
                                     </map>
                                   </option>
                                 </PersistentState>
