@@ -7,15 +7,40 @@ import androidx.lifecycle.ViewModel
 
 class ConversorViewModel : ViewModel() {
 
-    private val _resultado = MutableLiveData<String>().apply {
-        value = "Crie seu próprio bolão da Copa e compartilhe entre amigos!"
-    }
-    val resultado: LiveData<String> = _resultado
+    private val _resultado = MutableLiveData<String>()
+    val resultado: LiveData<String>
+        get() = _resultado
+
+    private val _moedaSimbolo = MutableLiveData<String>()
+    val moedaSimbolo: LiveData<String>
+        get() = _moedaSimbolo
 
     //FUNCTIONS
     fun onConvert() {
-        Log.i("INFO","Valor Convertido")
+        var valorConvertido = 0.0
+        Log.i("INFO", "Valor Convertido")
         //Toast.makeText(this, "Game has just finished", Toast.LENGTH_SHORT).show()
+
+        valorConvertido = (30 * 5.11)
+        _resultado.value = selectMoeda(1)+valorConvertido.toString()
+    }
+
+    fun selectMoeda(tipo: Int): String {
+        val moedaString = when (tipo) {
+            1 -> "R$ "
+            2 -> "US$ "
+            3 -> "E$ "
+            else -> " "
+        }
+        return moedaString
+    }
+
+
+
+    fun birthdayGreeting(): String {
+        val nameGreeting = "Happy Birthday, Rover!"
+        val ageGreeting = "You are now 5 years old!"
+        return "$nameGreeting\n$ageGreeting"
     }
 
 

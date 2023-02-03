@@ -22,12 +22,23 @@
             android:layout_marginEnd="32dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
+            android:onClick="@{() -> conversorViewModel.onConvert()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardVwValor"
-            app:srcCompat="@color/green_bold_700"
-            android:onClick="@{() -> conversorViewModel.onConvert()}"
-            />
+            app:srcCompat="@color/green_bold_700" />
+
+        <TextView
+            android:id="@+id/txtbtnconverter"
+            style="@style/txtView_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:text="@string/btn_converter"
+            app:layout_constraintBottom_toBottomOf="@+id/btnconverter"
+            app:layout_constraintEnd_toEndOf="@+id/btnconverter"
+            app:layout_constraintStart_toStartOf="@+id/btnconverter" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardVwValor"
@@ -54,7 +65,6 @@
                     android:layout_width="200dp"
                     android:layout_height="70dp"
                     android:layout_marginBottom="16dp"
-                    android:layout_marginTop="16dp"
                     android:background="@color/green_normal_200"
                     android:drawable="@drawable/ic_editview_default"
                     android:ems="10"
@@ -62,37 +72,32 @@
                     android:inputType="numberDecimal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.497"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/BtnMoeda1"
-                    app:layout_constraintVertical_bias="0.848" />
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <ImageButton
                     android:id="@+id/BtnMoeda1"
-                    android:layout_width="130dp"
+                    android:layout_width="140dp"
                     android:layout_height="70dp"
+                    android:layout_marginStart="32dp"
                     android:layout_marginTop="16dp"
                     android:padding="0dp"
-                    app:layout_constraintEnd_toStartOf="@+id/btnmoeda2"
-                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtViewValor"
-                    app:srcCompat="@color/green_light_400" />
+                    app:srcCompat="@color/bck_mobile" />
 
                 <ImageButton
                     android:id="@+id/btnmoeda2"
-                    android:layout_width="130dp"
+                    android:layout_width="140dp"
                     android:layout_height="70dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginTop="16dp"
                     android:padding="0dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/BtnMoeda1"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/BtnMoeda1"
-                    app:layout_constraintTop_toTopOf="@+id/BtnMoeda1"
-                    app:srcCompat="@color/green_light_400" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtViewValor"
+                    app:srcCompat="@color/bck_mobile" />
 
                 <TextView
-                    android:id="@+id/txtvwmoeda1"
+                    android:id="@+id/txtvwmoeda"
                     style="@style/txtView_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -100,8 +105,22 @@
                     android:text="@string/tit_dolar"
                     app:layout_constraintBottom_toBottomOf="@+id/BtnMoeda1"
                     app:layout_constraintEnd_toEndOf="@+id/BtnMoeda1"
+                    app:layout_constraintHorizontal_bias="0.507"
                     app:layout_constraintStart_toStartOf="@+id/BtnMoeda1"
-                    app:layout_constraintTop_toTopOf="@+id/BtnMoeda1" />
+                    app:layout_constraintTop_toTopOf="@+id/BtnMoeda1"
+                    app:layout_constraintVertical_bias="0.473" />
+
+                <TextView
+                    android:id="@+id/txtvwmoeda1"
+                    style="@style/txtView_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/tit_real"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnmoeda2"
+                    app:layout_constraintEnd_toEndOf="@+id/btnmoeda2"
+                    app:layout_constraintStart_toStartOf="@+id/btnmoeda2"
+                    app:layout_constraintTop_toTopOf="@+id/btnmoeda2" />
 
                 <TextView
                     android:id="@+id/txtViewValor"
@@ -110,11 +129,11 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginEnd="139dp"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="48dp"
                     android:layout_marginTop="16dp"
                     android:text="@string/titulo_valor"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -142,7 +161,47 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnconverter"
-            app:layout_constraintVertical_bias="0.07" />
+            app:layout_constraintVertical_bias="0.07" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtvwresmoeda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="44dp"
+                    android:layout_marginEnd="52dp"
+                    android:layout_marginStart="51dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@{conversorViewModel.resultado}"
+                    android:textColor="@color/white"
+                    android:textSize="60sp"
+                    app:fontFamily="@font/roboto_bold_700"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtvwresultado" />
+
+                <TextView
+                    android:id="@+id/txtvwresultado"
+                    style="@style/txtView_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="76dp"
+                    android:layout_marginStart="75dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/tit_valconverter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
