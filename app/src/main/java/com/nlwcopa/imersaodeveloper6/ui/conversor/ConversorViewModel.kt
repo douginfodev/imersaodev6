@@ -15,8 +15,18 @@ class ConversorViewModel : ViewModel() {
     val moedaSimbolo: LiveData<String>
         get() = _moedaSimbolo
 
+    private val _txtmoeda1 = MutableLiveData<String>()
+    val txtMoeda1: LiveData<String>
+        get() = _txtmoeda1
+
+    private val _txtmoeda2 = MutableLiveData<String>()
+    val txtMoeda2: LiveData<String>
+        get() = _txtmoeda2
+
     init{
-        _resultado.value = "0,00"
+        _resultado.value   = "0,00"
+        _txtmoeda1.value = "REAL"
+        _txtmoeda2.value = "DÓLAR"
     }
 
     //FUNCTIONS
@@ -37,5 +47,20 @@ class ConversorViewModel : ViewModel() {
             else -> " "
         }
         return moedaString
+    }
+
+    fun changeMoeda() {
+//        val moedaValueString = when (tipo) {
+//            1 -> "REAL"
+//            2 -> "DÓLAR"
+//            3 -> "EURO"
+//            else -> " "
+//        }
+        _txtmoeda1.value = "REAL"
+        _txtmoeda2.value = "DÓLAR"
+        Log.i("INFO", "Cliquei")
+
+        //val moedaValueString = _txtmoeda1.value
+            //return moedaValueString
     }
 }
