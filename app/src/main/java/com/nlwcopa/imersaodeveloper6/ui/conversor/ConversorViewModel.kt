@@ -15,6 +15,10 @@ class ConversorViewModel : ViewModel() {
     val moedaSimbolo: LiveData<String>
         get() = _moedaSimbolo
 
+    init{
+        _resultado.value = "0,00"
+    }
+
     //FUNCTIONS
     fun onConvert() {
         var valorConvertido = 0.0
@@ -34,14 +38,4 @@ class ConversorViewModel : ViewModel() {
         }
         return moedaString
     }
-
-
-
-    fun birthdayGreeting(): String {
-        val nameGreeting = "Happy Birthday, Rover!"
-        val ageGreeting = "You are now 5 years old!"
-        return "$nameGreeting\n$ageGreeting"
-    }
-
-
 }
