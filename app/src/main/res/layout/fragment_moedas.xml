@@ -45,7 +45,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         style="@style/cardView_peq"
-        android:background="@drawable/ic_cardview_peq"
+        app:cardBackgroundColor="@color/bck_mobile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,31 +54,40 @@
 
         <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            style="@style/cardView_peq"
+            android:background="@drawable/ic_cardview_peq"
+            app:srcCompat="@drawable/ic_cardview_peq" >
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/rdiobtnm1real"
+                style="@style/radiobtn_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:textColor="@color/green_bold_700"
+
+            android:text="REAL" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/rdiobtnm1dolar"
+                style="@style/radiobtn_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="DÒLAR" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/rdiobtnm1euro"
+                style="@style/radiobtn_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="EURO" />
         </RadioGroup>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         style="@style/cardView_peq"
+        app:cardBackgroundColor="@color/bck_mobile"
         android:background="@drawable/ic_cardview_peq"
         android:layout_width="match_parent"
         android:layout_height="140dp"
@@ -93,25 +102,32 @@
 
         <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            style="@style/cardView_peq"
+            android:background="@drawable/ic_cardview_peq"
+            app:srcCompat="@drawable/ic_cardview_peq" >
 
             <RadioButton
-                android:id="@+id/radioButton5"
+                android:id="@+id/rdiobtnm2real"
+                style="@style/radiobtn_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:textColor="@color/green_bold_700"
+                android:text="REAL" />
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/rdiobtnm2dolar"
+                style="@style/radiobtn_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="DÒLAR" />
 
             <RadioButton
-                android:id="@+id/radioButton6"
+                android:id="@+id/rdiobtnm2euro"
+                style="@style/radiobtn_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="EURO" />
 
         </RadioGroup>
 

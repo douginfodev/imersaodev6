@@ -1,6 +1,30 @@
 package com.nlwcopa.imersaodeveloper6.ui.conversor.moedas
 
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.nlwcopa.imersaodeveloper6.R
+import com.nlwcopa.imersaodeveloper6.databinding.FragmentConversorBinding
+import com.nlwcopa.imersaodeveloper6.ui.conversor.ConversorFragment
+import com.nlwcopa.imersaodeveloper6.ui.conversor.ConversorViewModel
+import com.nlwcopa.imersaodeveloper6.ui.main.MainViewModel
 
-class MoedasFragment : Fragment()  {
+class MoedasFragment : Fragment() {
+
+    companion object {
+        fun newInstance() = MoedasFragment()
+    }
+
+    private lateinit var viewModel: MoedasViewModel
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        return inflater.inflate(R.layout.fragment_moedas, container, false)
+    }
 }

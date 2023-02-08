@@ -8,6 +8,12 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="radiobtn_label">
+        <item name="android:fontFamily">@font/roboto_bold_700</item>
+       <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="txtView_button">
         <item name="android:fontFamily">@font/roboto_bold_700</item>
         <item name="android:textColor">@color/white</item>
