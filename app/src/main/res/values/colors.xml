@@ -10,4 +10,5 @@
     <color name="bck_mobile">#023843</color>
     <color name="btn_color_green">#12BF81</color>
     <color name="card_view">#23574E</color>
+    <color name="border_color">#94FF0D</color>
 </resources>
