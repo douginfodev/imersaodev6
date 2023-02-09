@@ -4,70 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_gravity="center"
     tools:context=".ui.main.MainFragment">
 
+    <TextView
+        android:id="@+id/textView"
+        style="@style/txtView_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AULA 1"
+        app:layout_constraintBottom_toBottomOf="@+id/btnEntrar"
+        app:layout_constraintEnd_toEndOf="@+id/btnEntrar"
+        app:layout_constraintStart_toStartOf="@+id/btnEntrar"
+        app:layout_constraintTop_toTopOf="@+id/btnEntrar" />
+
     <ImageButton
-        android:id="@+id/btnEntrar"
-        android:layout_width="240dp"
-        android:layout_height="78dp"
+        android:id="@+id/btnEntrar6"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/btn_color_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrar4" />
+
+    <ImageButton
+        android:id="@+id/btnEntrar5"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/btn_color_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrar3" />
+
+    <ImageButton
+        android:id="@+id/btnEntrar4"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/btn_color_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrar2" />
+
+    <ImageButton
+        android:id="@+id/btnEntrar3"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/btn_color_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
+
+    <ImageButton
+        android:id="@+id/btnEntrar2"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
         android:layout_marginTop="4dp"
         android:background="@color/btn_color_green"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewLogo" />
+
+    <ImageButton
+        android:id="@+id/btnEntrar"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/btn_color_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.225"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgViewLogo" />
 
     <ImageView
         android:id="@+id/imgViewLogo"
         android:layout_width="match_parent"
-        android:layout_height="174dp"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_banner_logo_background" />
-
-    <ImageView
-        android:id="@+id/imgViewKtl"
-        android:layout_width="81dp"
-        android:layout_height="71dp"
-        android:src="@mipmap/ic_logo_kotlin_frground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.645"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtpowerby"
-        app:layout_constraintVertical_bias="0.263" />
-
-    <ImageView
-        android:id="@+id/imgViewAndroid"
-        android:layout_width="71dp"
-        android:layout_height="67dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="12dp"
-        android:src="@mipmap/ic_logo_android_foreground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.417"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEntrar"
-        app:layout_constraintVertical_bias="0.974" />
-
-    <TextView
-        android:id="@+id/txtpowerby"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="50dp"
-        android:text="@string/powerby"
-        app:fontFamily="@font/roboto_medium_italic"
-        app:layout_constraintBottom_toTopOf="@+id/imgViewAndroid"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEntrar"
-        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

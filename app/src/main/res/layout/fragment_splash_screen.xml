@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<data>
+    <variable
+        name="splashscreenViewModel"
+        type="com.nlwcopa.imersaodeveloper6.ui.splashscreen.SplashScreenViewModel" />
+</data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/mainspl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    tools:context=".ui.splashscreen.SplashScreenFragment">
+
+    <ImageButton
+        android:id="@+id/btnEntrar"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/oc_button_large"
+        android:padding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewLogo" />
+
+    <ImageView
+        android:id="@+id/imgViewLogo"
+        android:layout_width="match_parent"
+        android:layout_height="174dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_banner_logo_background" />
+
+    <ImageView
+        android:id="@+id/imgViewKtl"
+        android:layout_width="81dp"
+        android:layout_height="71dp"
+        android:src="@mipmap/ic_logo_kotlin_frground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtpowerby"
+        app:layout_constraintVertical_bias="0.263" />
+
+    <ImageView
+        android:id="@+id/imgViewAndroid"
+        android:layout_width="71dp"
+        android:layout_height="67dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp"
+        android:src="@mipmap/ic_logo_android_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrar"
+        app:layout_constraintVertical_bias="0.974" />
+
+    <TextView
+        android:id="@+id/txtpowerby"
+        style="@style/txtView_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/powerby"
+        app:fontFamily="@font/roboto_medium_italic"
+        app:layout_constraintBottom_toTopOf="@+id/imgViewAndroid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrar"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/txtViewentrar"
+        style="@style/txtView_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tit_entrar"
+        app:layout_constraintBottom_toBottomOf="@+id/btnEntrar"
+        app:layout_constraintEnd_toEndOf="@+id/btnEntrar"
+        app:layout_constraintStart_toStartOf="@+id/btnEntrar"
+        app:layout_constraintTop_toTopOf="@+id/btnEntrar" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

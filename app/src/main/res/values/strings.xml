@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">" "</string>
     <string name="powerby">Powered by:</string>
+    <string name="tit_entrar">ENTRAR</string>
 
     //CONVERSOR
     <string name="titulo_conversor">CONVERSOR</string>

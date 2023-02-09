@@ -1,14 +1,47 @@
 package com.nlwcopa.imersaodeveloper6.ui.splashscreen
 
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.nlwcopa.imersaodeveloper6.ui.main.MainFragment
-import com.nlwcopa.imersaodeveloper6.ui.main.MainViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.nlwcopa.imersaodeveloper6.databinding.FragmentSplashScreenBinding
 
 class SplashScreenFragment : Fragment() {
+
+    private var _binding: FragmentSplashScreenBinding? = null
+    private val binding get() = _binding!!
 
     companion object {
         fun newInstance() = SplashScreenFragment()
     }
 
-    private lateinit var viewModel: SplashScreenViewModel
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+
+        //ViewModel
+        val splashscreenViewModel =
+            ViewModelProvider(this).get(SplashScreenViewModel::class.java)
+
+        //Inserir Fragment na View
+        _binding = FragmentSplashScreenBinding.inflate(inflater, container, false)
+        val root : View = binding.root
+
+        //binding.nome da variable no xml =
+        // nome da val do viewModelProvider
+        binding.splashscreenViewModel  = splashscreenViewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        return root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
 }
