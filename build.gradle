@@ -6,7 +6,7 @@ plugins {
 }
 
 ext {
-    navigationVersion = "2.3.0"
+    navigationVersion = "2.5.3"
 }
 
 task clean(type: Delete) {
