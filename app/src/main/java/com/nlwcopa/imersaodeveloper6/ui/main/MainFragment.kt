@@ -6,27 +6,38 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.nlwcopa.imersaodeveloper6.R
+import com.nlwcopa.imersaodeveloper6.databinding.FragmentMainBinding
+import com.nlwcopa.imersaodeveloper6.databinding.FragmentSplashScreenBinding
+import com.nlwcopa.imersaodeveloper6.ui.splashscreen.SplashScreenFragment
+import com.nlwcopa.imersaodeveloper6.ui.splashscreen.SplashScreenViewModel
 
 class MainFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = MainFragment()
-    }
-
-    private lateinit var viewModel: MainViewModel
+    private var _binding: FragmentMainBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_main, container, false)
+
+        //Inserir Fragment na View
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
+
+        binding.btnEntrar.setOnClickListener{
+            findNavController().navigate(R.id.action_mainFragment_to_conversorFragment)
+        }
+
+        val root : View = binding.root
+
+        return root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

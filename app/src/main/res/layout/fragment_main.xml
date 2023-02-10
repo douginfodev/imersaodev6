@@ -1,99 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
-    tools:context=".ui.main.MainFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/textView"
-        style="@style/txtView_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="AULA 1"
-        app:layout_constraintBottom_toBottomOf="@+id/btnEntrar"
-        app:layout_constraintEnd_toEndOf="@+id/btnEntrar"
-        app:layout_constraintStart_toStartOf="@+id/btnEntrar"
-        app:layout_constraintTop_toTopOf="@+id/btnEntrar" />
+    <data>
+        <variable
+            name="mainViewModel"
+            type="com.nlwcopa.imersaodeveloper6.ui.main.MainViewModel" />
+    </data>
 
-    <ImageButton
-        android:id="@+id/btnEntrar6"
-        android:layout_width="140dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/btn_color_green"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.811"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEntrar4" />
-
-    <ImageButton
-        android:id="@+id/btnEntrar5"
-        android:layout_width="140dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/btn_color_green"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.21"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEntrar3" />
-
-    <ImageButton
-        android:id="@+id/btnEntrar4"
-        android:layout_width="140dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/btn_color_green"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.811"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEntrar2" />
-
-    <ImageButton
-        android:id="@+id/btnEntrar3"
-        android:layout_width="140dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/btn_color_green"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.209"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
-
-    <ImageButton
-        android:id="@+id/btnEntrar2"
-        android:layout_width="140dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/btn_color_green"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.811"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewLogo" />
-
-    <ImageButton
-        android:id="@+id/btnEntrar"
-        android:layout_width="140dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/btn_color_green"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.225"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewLogo" />
-
-    <ImageView
-        android:id="@+id/imgViewLogo"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_banner_logo_background" />
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        tools:context=".ui.main.MainFragment">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/btnEntrar6"
+            android:layout_width="140dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/btn_color_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnEntrar5"
+            app:layout_constraintTop_toBottomOf="@+id/btnEntrar4" />
+
+        <ImageButton
+            android:id="@+id/btnEntrar5"
+            android:layout_width="140dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/btn_color_green"
+            app:layout_constraintEnd_toStartOf="@+id/btnEntrar6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnEntrar3" />
+
+        <ImageButton
+            android:id="@+id/btnEntrar3"
+            android:layout_width="140dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/btn_color_green"
+            app:layout_constraintEnd_toStartOf="@+id/btnEntrar4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
+
+        <ImageButton
+            android:id="@+id/btnEntrar4"
+            android:layout_width="140dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/btn_color_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnEntrar3"
+            app:layout_constraintTop_toBottomOf="@+id/btnEntrar2" />
+
+        <ImageButton
+            android:id="@+id/btnEntrar2"
+            android:layout_width="140dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/btn_color_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnEntrar"
+            app:layout_constraintTop_toBottomOf="@+id/imgViewLogo" />
+
+        <ImageButton
+            android:id="@+id/btnEntrar"
+            android:layout_width="140dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/btn_color_green"
+            app:layout_constraintEnd_toStartOf="@+id/btnEntrar2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgViewLogo" />
+
+        <ImageView
+            android:id="@+id/imgViewLogo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_banner_logo_background" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/txtView_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:text="@string/txt_aula2"
+            app:layout_constraintBottom_toBottomOf="@+id/btnEntrar2"
+            app:layout_constraintEnd_toEndOf="@+id/btnEntrar2"
+            app:layout_constraintTop_toTopOf="@+id/btnEntrar2" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/txtView_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:text="@string/txt_aula1"
+            app:layout_constraintBottom_toBottomOf="@+id/btnEntrar"
+            app:layout_constraintStart_toStartOf="@+id/btnEntrar"
+            app:layout_constraintTop_toTopOf="@+id/btnEntrar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

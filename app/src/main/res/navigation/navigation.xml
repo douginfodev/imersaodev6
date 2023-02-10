@@ -16,5 +16,13 @@
         android:id="@+id/mainFragment"
         android:name="com.nlwcopa.imersaodeveloper6.ui.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_conversorFragment"
+            app:destination="@id/conversorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/conversorFragment"
+        android:name="com.nlwcopa.imersaodeveloper6.ui.conversor.ConversorFragment"
+        android:label="ConversorFragment" />
 </navigation>

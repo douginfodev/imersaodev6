@@ -3,6 +3,13 @@
     <string name="powerby">Powered by:</string>
     <string name="tit_entrar">ENTRAR</string>
 
+    //MAIN
+    <string name="txt_aula1">AULA 1</string>
+    <string name="txt_aula2">AULA 2</string>
+    <string name="txt_aula3">AULA 3</string>
+    <string name="txt_aula4">AULA 4</string>
+
+
     //CONVERSOR
     <string name="titulo_conversor">CONVERSOR</string>
     <string name="titulo_valor">VALOR A CONVERTER</string>
