@@ -24,5 +24,22 @@
     <fragment
         android:id="@+id/conversorFragment"
         android:name="com.nlwcopa.imersaodeveloper6.ui.conversor.ConversorFragment"
-        android:label="ConversorFragment" />
+        android:label="ConversorFragment" >
+        <action
+            android:id="@+id/action_conversorFragment_to_moedasFragment"
+            app:destination="@id/moedasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moedasFragment"
+        android:name="com.nlwcopa.imersaodeveloper6.ui.conversor.moedas.MoedasFragment"
+        android:label="MoedasFragment" >
+        <argument
+            android:name="tipomoeda1"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="tipomoeda2"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>

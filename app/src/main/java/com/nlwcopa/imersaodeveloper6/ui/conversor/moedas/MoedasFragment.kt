@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.nlwcopa.imersaodeveloper6.R
@@ -36,9 +37,15 @@ class MoedasFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        // Recuperar os safes args
+        val args = MoedasFragmentArgs.fromBundle(requireArguments())
+        Toast.makeText(context, "Tipo Moeda 1: ${args.tipomoeda1}, Tipo Moeda 2: ${args.tipomoeda2}", Toast.LENGTH_LONG).show()
+
         //ViewModel
         val moedasViewModel =
             ViewModelProvider(this).get(MoedasViewModel::class.java)
+
+        moedasViewModel.onStart(args.tipomoeda1,args.tipomoeda2)
 
         //Inserir Fragment na View
         _binding = FragmentMoedasBinding.inflate(inflater, container, false)

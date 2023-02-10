@@ -39,20 +39,37 @@ class MoedasViewModel : ViewModel() {
     val rdbbtn6: LiveData<Boolean>
         get() = _rdbbtn6
 
+     //TIPO MOEDAS
+    private val _tipoMoeda1 = MutableLiveData<Int>()
+    val tipoMoeda1: LiveData<Int>
+        get() = _tipoMoeda1
+
+    private val _tipoMoeda2 = MutableLiveData<Int>()
+    val tipoMoeda2: LiveData<Int>
+        get() = _tipoMoeda2
+
     init {
-        _rdbbtn1.value = true
+        _rdbbtn1.value = false
         _rdbbtn2.value = false
         _rdbbtn3.value = false
 
         _rdbbtn4.value = false
-        _rdbbtn5.value = true
+        _rdbbtn5.value = false
         _rdbbtn6.value = false
+    }
+
+    fun onStart(tpMoeda1 : Int , tpMoeda2 : Int,){
+        _tipoMoeda1.value = tpMoeda1
+        _tipoMoeda2.value = tpMoeda2
+        onChangeColor(tpMoeda1)
+        onChangeColorConvert(tpMoeda2)
     }
 
     fun onChangeColor(op: Int) {
         _rdbbtn1.value = false
         _rdbbtn2.value = false
         _rdbbtn3.value = false
+        _tipoMoeda1.value = op
 
         when (op) {
             11 -> _rdbbtn1.value = true
@@ -66,6 +83,7 @@ class MoedasViewModel : ViewModel() {
         _rdbbtn4.value = false
         _rdbbtn5.value = false
         _rdbbtn6.value = false
+        _tipoMoeda2.value = op
 
         when (op) {
             14 -> _rdbbtn4.value = true

@@ -69,7 +69,6 @@
                     android:layout_width="140dp"
                     android:layout_height="70dp"
                     android:drawable="@drawable/ic_button_medium"
-                    android:onClick="@{() -> conversorViewModel.changeMoeda()}"
                     android:padding="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.854"
@@ -80,7 +79,6 @@
 
                 <ImageButton
                     android:id="@+id/BtnMoeda1"
-                    android:onClick="@{() -> conversorViewModel.changeMoeda()}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.145"
                     app:layout_constraintStart_toStartOf="parent"

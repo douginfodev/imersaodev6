@@ -1,11 +1,13 @@
 package com.nlwcopa.imersaodeveloper6.ui.conversor
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.nlwcopa.imersaodeveloper6.R
 import com.nlwcopa.imersaodeveloper6.databinding.FragmentConversorBinding
 import com.nlwcopa.imersaodeveloper6.ui.main.MainFragment
@@ -35,6 +37,19 @@ class ConversorFragment : Fragment () {
 
         //Inserir Fragment na View
         _binding = FragmentConversorBinding.inflate(inflater, container, false)
+
+        binding.BtnMoeda1.setOnClickListener{
+            Log.i("INFO", "Valor Convertido")
+//            findNavController().navigate(R.id.action_conversorFragment_to_moedasFragment)
+               findNavController()
+                .navigate(ConversorFragmentDirections
+                    .actionConversorFragmentToMoedasFragment(11,16))
+         }
+        // Using directions to navigate to the GameWonFragment
+        //view.findNavController()
+           // .navigate(
+
+
         val root : View = binding.root
 
         //binding.nome da variable no xml =
