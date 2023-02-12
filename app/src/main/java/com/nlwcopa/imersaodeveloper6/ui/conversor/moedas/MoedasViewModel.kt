@@ -5,13 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MoedasViewModel : ViewModel() {
+//  android:paddingTop="?attr/actionBarSize"
 
-    //  android:paddingTop="?attr/actionBarSize"
-//private val moedas1 = arrayOf(true,false,false)
-//private val moedas2 = arrayListOf(false,true,false)
-    private var _moedas1 = MutableLiveData<ArrayList<Boolean>>()
-    val moedas1: LiveData<ArrayList<Boolean>>
-        get() = _moedas1
+//    private var _moedas1 = MutableLiveData<ArrayList<Boolean>>()
+//    val moedas1: LiveData<ArrayList<Boolean>>
+//        get() = _moedas1
 
     //Moedas 1
     private val _rdbbtn1 = MutableLiveData<Boolean>()
@@ -48,6 +46,12 @@ class MoedasViewModel : ViewModel() {
     val tipoMoeda2: LiveData<Int>
         get() = _tipoMoeda2
 
+    var moedaAtualSelected: Int = 0
+        get() = field
+        set(value) {
+            field = value
+        }
+
     init {
         _rdbbtn1.value = false
         _rdbbtn2.value = false
@@ -58,9 +62,10 @@ class MoedasViewModel : ViewModel() {
         _rdbbtn6.value = false
     }
 
-    fun onStart(tpMoeda1 : Int , tpMoeda2 : Int,){
-        _tipoMoeda1.value = tpMoeda1
-        _tipoMoeda2.value = tpMoeda2
+    fun onStartFragment(tpMoeda1 : Int , tpMoeda2 : Int,){
+        this.moedaAtualSelected = tpMoeda1
+        //_tipoMoeda1.value = tpMoeda1
+        //_tipoMoeda2.value = tpMoeda2
         onChangeColor(tpMoeda1)
         onChangeColorConvert(tpMoeda2)
     }

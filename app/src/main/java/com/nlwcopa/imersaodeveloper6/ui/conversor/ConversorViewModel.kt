@@ -15,6 +15,11 @@ class ConversorViewModel : ViewModel() {
     val moedaSimbolo: LiveData<String>
         get() = _moedaSimbolo
 
+    private val _moedaHint = MutableLiveData<String>()
+    val moedaHint: LiveData<String>
+        get() = _moedaHint
+
+    //Button Moedas
     private val _txtmoeda1 = MutableLiveData<String>()
     val txtMoeda1: LiveData<String>
         get() = _txtmoeda1
@@ -23,11 +28,34 @@ class ConversorViewModel : ViewModel() {
     val txtMoeda2: LiveData<String>
         get() = _txtmoeda2
 
+    //TIPO MOEDAS
+    private val _moedaAtual = MutableLiveData<Int>()
+    val moedaAtual: LiveData<Int>
+        get() = _moedaAtual
+
+    private val _moedaConverter = MutableLiveData<Int>()
+    val moedaConverter: LiveData<Int>
+        get() = _moedaConverter
+
     init{
+        _moedaHint.value = "R$"
         _resultado.value   = "0,00"
         _txtmoeda1.value = "REAL"
         _txtmoeda2.value = "DÓLAR"
     }
+
+    fun checkArgsMoedas(moedaatual: Int , moedaconverter: Int){
+
+        if (moedaatual != 0)
+            _moedaHint.value = selectMoeda(moedaatual)
+
+        _moedaAtual.value = moedaatual
+        _moedaConverter.value = moedaconverter
+
+        _txtmoeda1.value = onButtonMoeda(moedaatual)
+        _txtmoeda2.value = onButtonMoeda(moedaconverter)
+    }
+
 
     //FUNCTIONS
     fun onConvert() {
@@ -36,31 +64,31 @@ class ConversorViewModel : ViewModel() {
         //Toast.makeText(this, "Game has just finished", Toast.LENGTH_SHORT).show()
 
         valorConvertido = (30 * 5.11)
-        _resultado.value = selectMoeda(1)+valorConvertido.toString()
+        _resultado.value = selectMoeda(12)+valorConvertido.toString()
     }
 
     fun selectMoeda(tipo: Int): String {
         val moedaString = when (tipo) {
-            1 -> "R$ "
-            2 -> "US$ "
-            3 -> "E$ "
+            11 -> "R$ "
+            12 -> "US$ "
+            13 -> "E$ "
             else -> " "
         }
         return moedaString
     }
 
-    fun changeMoeda() {
-//        val moedaValueString = when (tipo) {
-//            1 -> "REAL"
-//            2 -> "DÓLAR"
-//            3 -> "EURO"
-//            else -> " "
-//        }
-        _txtmoeda1.value = "REAL"
-        _txtmoeda2.value = "DÓLAR"
-        Log.i("INFO", "Cliquei")
+    fun onButtonMoeda(moeda: Int) : String {
+        val moedaLabel = when (moeda) {
+            11 -> "REAL"
+            12 -> "DÓLAR"
+            13 -> "EURO"
+            14 -> "REAL"
+            15 -> "DÓLAR"
+            16 -> "EURO"
+            else -> " "
+          }
 
-        //val moedaValueString = _txtmoeda1.value
-            //return moedaValueString
+       return moedaLabel
     }
+
 }

@@ -28,6 +28,14 @@
         <action
             android:id="@+id/action_conversorFragment_to_moedasFragment"
             app:destination="@id/moedasFragment" />
+        <argument
+            android:name="moedaatual"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="moedaconverter"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/moedasFragment"
@@ -41,5 +49,8 @@
             android:name="tipomoeda2"
             app:argType="integer"
             android:defaultValue="0" />
+        <action
+            android:id="@+id/action_moedasFragment_to_conversorFragment"
+            app:destination="@id/conversorFragment" />
     </fragment>
 </navigation>

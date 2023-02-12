@@ -55,7 +55,7 @@
 
                 <EditText
                     android:id="@+id/edtTxtl"
-                    android:hint="@string/titulo_valor"
+                    android:hint="@{conversorViewModel.moedaHint}"
                     android:inputType="numberDecimal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

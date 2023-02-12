@@ -1,5 +1,6 @@
 package com.nlwcopa.imersaodeveloper6.ui.conversor
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,22 +9,23 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.nlwcopa.imersaodeveloper6.R
+import com.nlwcopa.imersaodeveloper6.ui.conversor.ConversorViewModel
 import com.nlwcopa.imersaodeveloper6.databinding.FragmentConversorBinding
+import com.nlwcopa.imersaodeveloper6.ui.conversor.moedas.MoedasFragmentArgs
 import com.nlwcopa.imersaodeveloper6.ui.main.MainFragment
 
-class ConversorFragment : Fragment () {
+class ConversorFragment : Fragment() {
 
     private var _binding: FragmentConversorBinding? = null
-    //private lateinit var conversorViewModel: ConversorViewModel
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+    private var argsMoedaAtual = 0
+    private var argsMoedaConverter = 0
+    private lateinit var  convViewModel: ConversorViewModel
+    private lateinit var args: ConversorFragmentArgs
 
-    companion object {
-        fun newInstance() = ConversorFragment()
-    }
+//    companion object {
+//        fun newInstance() = ConversorFragment()
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,30 +33,31 @@ class ConversorFragment : Fragment () {
         savedInstanceState: Bundle?
     ): View {
 
+
         //ViewModel
         val conversorViewModel =
             ViewModelProvider(this).get(ConversorViewModel::class.java)
 
+        this.convViewModel = conversorViewModel
+
         //Inserir Fragment na View
         _binding = FragmentConversorBinding.inflate(inflater, container, false)
 
-        binding.BtnMoeda1.setOnClickListener{
-            Log.i("INFO", "Valor Convertido")
-//            findNavController().navigate(R.id.action_conversorFragment_to_moedasFragment)
-               findNavController()
-                .navigate(ConversorFragmentDirections
-                    .actionConversorFragmentToMoedasFragment(11,16))
-         }
-        // Using directions to navigate to the GameWonFragment
-        //view.findNavController()
-           // .navigate(
+        // onClick Moeda Atual
+        binding.BtnMoeda1.setOnClickListener {
+            onNavigate()
+        }
 
+        // onClick Moeda Converter
+        binding.btnmoeda2.setOnClickListener {
+            onNavigate()
+        }
 
-        val root : View = binding.root
+        val root: View = binding.root
 
         //binding.nome da variable no xml =
         // nome da val do viewModelProvider
-        binding.conversorViewModel  = conversorViewModel
+        binding.conversorViewModel = conversorViewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
         return root
@@ -64,5 +67,73 @@ class ConversorFragment : Fragment () {
         super.onDestroyView()
         _binding = null
     }
+
+    fun onGetArguments(){
+        Log.i("INFO", "CONVERSOR GETTERS ARGUMENTOS")
+        this.args = ConversorFragmentArgs.fromBundle(requireArguments())
+        this.argsMoedaAtual = args.moedaatual
+        this.argsMoedaConverter = args.moedaconverter
+        Log.i("INFO", this.argsMoedaAtual.toString()+this.argsMoedaConverter)
+    }
+
+    fun onSetMoedas(){
+        Log.i("INFO", "CONVERSOR SETAR MOEDAS")
+        this.convViewModel.checkArgsMoedas(this.argsMoedaAtual, this.argsMoedaConverter)
+    }
+
+    fun onNavigate() {
+        findNavController()
+            .navigate(
+                ConversorFragmentDirections
+                    .actionConversorFragmentToMoedasFragment(argsMoedaAtual, argsMoedaConverter)
+            )
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        Log.i("ConversorFragment", "onAttach called")
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.i("ConversorFragment", "onCreate called")
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.i("ConversorFragment", "onViewCreated called")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("ConversorFragment", "onStart called")
+        onGetArguments()
+        onSetMoedas()
+    }
+
+//    fun onChangeMoedas(vwModel: ConversorViewModel){
+//        vwModel.
+//    }
+
+
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("ConversorFragment", "onResume called")
+    }
+    override fun onPause() {
+        super.onPause()
+        Log.i("ConversorFragment", "onPause called")
+    }
+    override fun onStop() {
+        super.onStop()
+        Log.i("ConversorFragment", "onStop called")
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.i("ConversorFragment", "onDetach called")
+    }
+
+
 
 }
