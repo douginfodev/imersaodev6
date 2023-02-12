@@ -60,7 +60,15 @@ class MoedasFragment : Fragment() {
         _binding = FragmentMoedasBinding.inflate(inflater, container, false)
 
         binding.imageButton.setOnClickListener {
-            onNavigate()
+
+            if (onVerifyMoedas(
+                    moedasViewModel.moedaAtualSelected, moedasViewModel.moedaConverterSelected-3
+                )
+            ) {
+                onMessage()
+            } else {
+                onNavigate()
+            }
         }
 
         val root: View = binding.root
@@ -81,14 +89,32 @@ class MoedasFragment : Fragment() {
         findNavController()
             .navigate(
                 MoedasFragmentDirections
-                    .actionMoedasFragmentToConversorFragment(this.args.tipomoeda1, this.args.tipomoeda2)
+                    .actionMoedasFragmentToConversorFragment(
+                        moedasViewModel.moedaAtualSelected,
+                        moedasViewModel.moedaConverterSelected
+                    )
             )
     }
 
-    fun onGetArguments(){
-        Log.i("INFO", "MOEDAS ARGUMENTOS")
+    fun onGetArguments() {
         this.args = MoedasFragmentArgs.fromBundle(requireArguments())
-        Log.i("INFO", this.args.tipomoeda1.toString()+this.args.tipomoeda2.toString())
+    }
+
+    fun onVerifyMoedas(moeda1: Int, moeda2: Int): Boolean {
+        var verify = false
+
+        if (moeda1 == moeda2)
+            verify = true
+
+        return verify
+    }
+
+    fun onMessage() {
+        Toast.makeText(
+            context,
+            " INFO: sELECIONE MOEDAS DIFERENTES",
+            Toast.LENGTH_LONG
+        ).show()
     }
 
     override fun onAttach(context: Context) {
@@ -109,10 +135,9 @@ class MoedasFragment : Fragment() {
     //onShow
     override fun onStart() {
         super.onStart()
-        Log.i("MoedasFragment", "onStart called")
         onGetArguments()
-        //this.moedasViewModel.onStartFragment(args.tipomoeda1, args.tipomoeda2)
-   }
+        this.moedasViewModel.onStartFragment(args.tipomoeda1, args.tipomoeda2)
+    }
 
     //onFocus
     override fun onResume() {

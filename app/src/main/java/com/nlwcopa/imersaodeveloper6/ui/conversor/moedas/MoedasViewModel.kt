@@ -52,6 +52,12 @@ class MoedasViewModel : ViewModel() {
             field = value
         }
 
+    var moedaConverterSelected: Int = 0
+        get() = field
+        set(value) {
+            field = value
+        }
+
     init {
         _rdbbtn1.value = false
         _rdbbtn2.value = false
@@ -64,8 +70,9 @@ class MoedasViewModel : ViewModel() {
 
     fun onStartFragment(tpMoeda1 : Int , tpMoeda2 : Int,){
         this.moedaAtualSelected = tpMoeda1
-        //_tipoMoeda1.value = tpMoeda1
-        //_tipoMoeda2.value = tpMoeda2
+        this.moedaConverterSelected = tpMoeda2
+        _tipoMoeda1.value = tpMoeda1
+        _tipoMoeda2.value = tpMoeda2
         onChangeColor(tpMoeda1)
         onChangeColorConvert(tpMoeda2)
     }
@@ -74,6 +81,7 @@ class MoedasViewModel : ViewModel() {
         _rdbbtn1.value = false
         _rdbbtn2.value = false
         _rdbbtn3.value = false
+        moedaAtualSelected = op
         _tipoMoeda1.value = op
 
         when (op) {
@@ -88,6 +96,7 @@ class MoedasViewModel : ViewModel() {
         _rdbbtn4.value = false
         _rdbbtn5.value = false
         _rdbbtn6.value = false
+        moedaConverterSelected = op
         _tipoMoeda2.value = op
 
         when (op) {
