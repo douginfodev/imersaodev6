@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import kotlin.math.roundToInt
 
 class ConversorViewModel : ViewModel() {
 
@@ -56,15 +57,30 @@ class ConversorViewModel : ViewModel() {
         _txtmoeda2.value = onButtonMoeda(moedaconverter)
     }
 
-
     //FUNCTIONS
-    fun onConvert() {
+    fun onConvert(value : Float) {
         var valorConvertido = 0.0
         Log.i("INFO", "Valor Convertido")
         //Toast.makeText(this, "Game has just finished", Toast.LENGTH_SHORT).show()
 
-        valorConvertido = (30 * 5.11)
+        valorConvertido = (value / moedaReferencia(_moedaConverter))
+        val random = valorConvertido
+         valorConvertido = (random * 100.0).roundToInt() / 100.0
         _resultado.value = selectMoeda(12)+valorConvertido.toString()
+    }
+
+    fun moedaReferencia(moeda : LiveData<Int>) : Double{
+        val moedavalue = when (moeda.value) {
+            11 -> 5.11
+            12 -> 5.11
+            13 -> 6.25
+            14 -> 5.11
+            15 -> 5.11
+            16 -> 6.25
+            else -> 0.0
+        }
+
+        return moedavalue
     }
 
     fun selectMoeda(tipo: Int): String {

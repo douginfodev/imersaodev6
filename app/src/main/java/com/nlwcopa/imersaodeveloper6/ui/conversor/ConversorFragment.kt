@@ -20,6 +20,7 @@ class ConversorFragment : Fragment() {
     private val binding get() = _binding!!
     private var argsMoedaAtual = 0
     private var argsMoedaConverter = 0
+    private var valorConverter = "0.0"
     private lateinit var  convViewModel: ConversorViewModel
     private lateinit var args: ConversorFragmentArgs
 
@@ -32,7 +33,6 @@ class ConversorFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
 
         //ViewModel
         val conversorViewModel =
@@ -52,6 +52,12 @@ class ConversorFragment : Fragment() {
         binding.btnmoeda2.setOnClickListener {
             onNavigate()
         }
+
+        binding.btnconverter.setOnClickListener {
+            this.valorConverter = binding.edtTxtl.text.toString()
+            onConvertMoeda(this.valorConverter.toFloat())
+        }
+
 
         val root: View = binding.root
 
@@ -87,6 +93,11 @@ class ConversorFragment : Fragment() {
                 ConversorFragmentDirections
                     .actionConversorFragmentToMoedasFragment(argsMoedaAtual, argsMoedaConverter)
             )
+    }
+
+    fun onConvertMoeda(value : Float){
+        Log.i("INFO", "CONVERSOR SETAR MOEDAS")
+        this.convViewModel.onConvert(value)
     }
 
     override fun onAttach(context: Context) {
