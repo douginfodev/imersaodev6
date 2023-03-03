@@ -25,4 +25,13 @@
     <string name="tit_converterpara">CONVERTER PARA:</string>
     <string name="txtbtnconfirmar">CONFIRMAR</string>
 
+    //MOVIE FRAGMENT
+    <string name="tit_movie">QUAL SEU FILME PREFERIDO:</string>
+    <string name="tit_capafilme">CAPA FILME:</string>
+    <string name="tit_diretor">DIRETOR:</string>
+    <string name="tit_ano">ANO:</string>
+    <string name="btn_gravar">GRAVAR</string>
+
+
+
 </resources>
