@@ -1,17 +1,29 @@
 package com.nlwcopa.imersaodeveloper6.repository
 
-import com.nlwcopa.imersaodeveloper6.database.Movie
+import androidx.lifecycle.LiveData
+import com.nlwcopa.imersaodeveloper6.database.Movies
 
 interface MoviesRepository {
-    //fun getAll(): LiveData<List<Movie>>
-    fun loadAllByIds(movieIds: IntArray): List<Movie>
-    suspend fun insertAll(vararg movies: Movie)
-    suspend fun insertMovie(
+
+    suspend fun insertMovies(
         nameMovie: String,
         refName: String,
         directorName: String,
         yearMovie: String
     ): Long
 
-    suspend fun delete(movie: Movie)
+    suspend fun updateMovies(
+        id: Int,
+        nameMovie: String,
+        refName: String,
+        directorName: String,
+        yearMovie: String
+    )
+
+    suspend fun deleteMovies(id: Int)
+
+    suspend fun deleteAllMovies()
+
+    suspend fun getAllMovies(): LiveData<List<Movies>>
+
 }

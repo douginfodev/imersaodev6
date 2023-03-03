@@ -9,11 +9,11 @@ data class Movies(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     @ColumnInfo(name = "namemovie")
-    val nameMovie:    String?,
+    val nameMovie:    String,
     @ColumnInfo(name = "refname")
-    val refName:         String?,
+    val refName:         String,
     @ColumnInfo(name = "directorname")
-    val directorName: String?,
+    val directorName: String,
     @ColumnInfo(name = "yearmovie")
-    val yearMovie:      String?
+    val yearMovie:      String
 )

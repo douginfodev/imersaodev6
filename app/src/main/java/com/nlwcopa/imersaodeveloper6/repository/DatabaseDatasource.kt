@@ -1,36 +1,59 @@
 package com.nlwcopa.imersaodeveloper6.repository
 
+import androidx.lifecycle.LiveData
 import com.nlwcopa.imersaodeveloper6.database.Movies
 import com.nlwcopa.imersaodeveloper6.database.dao.MovieDao
 
 class DatabaseDatasource(
-    private val moviesDao: MovieDao
-) : MoviesRepository {
-    //override fun loadAllByIds(movieIds: IntArray): List<Movies> {
-    //    TODO("Not yet implemented")
-    //}
+    private val movieDao: MovieDao
+    ) : MoviesRepository {
 
-   // override suspend fun insertAll(vararg movies: Movies) {
-      //  TODO("Not yet implemented")
-    //}
-
-    override suspend fun insertMovie(
+    override suspend fun insertMovies(
         nameMovie: String,
         refName: String,
         directorName: String,
         yearMovie: String
     ): Long {
-        val movieEntity = Movies(
+
+        val movie = Movies(
             id = 0,
-            nameMovie = nameMovie,
+            nameMovie =  nameMovie,
             refName = refName,
-            directorName = directorName,
+            directorName =  directorName,
             yearMovie = yearMovie
         )
-        return moviesDao.insertMovie(movieEntity)
+
+        return movieDao.insert(movie)
     }
 
-    override suspend fun delete(movie: Movies) {
-        TODO("Not yet implemented")
+    override suspend fun updateMovies(
+        id: Int,
+        nameMovie: String,
+        refName: String,
+        directorName: String,
+        yearMovie: String
+    ) {
+        val movie = Movies(
+            id = id,
+            nameMovie =  nameMovie,
+            refName = refName,
+            directorName =  directorName,
+            yearMovie = yearMovie
+        )
+
+         movieDao.update(movie)
     }
+
+    override suspend fun deleteMovies(id: Int) {
+        movieDao.delete(id)
+    }
+
+    override suspend fun deleteAllMovies() {
+        movieDao.deleteAll()
+    }
+
+    override suspend fun getAllMovies(): LiveData<List<Movies>> {
+        return movieDao.getAll()
+    }
+
 }
