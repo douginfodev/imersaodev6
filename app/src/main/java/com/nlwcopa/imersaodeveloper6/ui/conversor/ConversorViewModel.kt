@@ -38,17 +38,17 @@ class ConversorViewModel : ViewModel() {
     val moedaConverter: LiveData<Int>
         get() = _moedaConverter
 
-    init{
+    init {
         _moedaHint.value = "R$"
-        _resultado.value   = "0,00"
+        _resultado.value = "0,00"
         _txtmoeda1.value = "REAL"
         _txtmoeda2.value = "DÓLAR"
     }
 
-    fun checkArgsMoedas(moedaatual: Int , moedaconverter: Int){
+    fun checkArgsMoedas(moedaatual: Int, moedaconverter: Int) {
 
-        if (moedaatual != 0)
-            _moedaHint.value = selectMoeda(moedaatual)
+        //if (moedaatual != 0)
+           // _moedaHint.value = selectMoeda(moedaatual.value)
 
         _moedaAtual.value = moedaatual
         _moedaConverter.value = moedaconverter
@@ -58,18 +58,15 @@ class ConversorViewModel : ViewModel() {
     }
 
     //FUNCTIONS
-    fun onConvert(value : Float) {
-        var valorConvertido = 0.0
-        Log.i("INFO", "Valor Convertido")
+    fun onConvert(value: Float) {
         //Toast.makeText(this, "Game has just finished", Toast.LENGTH_SHORT).show()
-
-        valorConvertido = (value / moedaReferencia(_moedaConverter))
+        var valorConvertido = (value / moedaReferencia(_moedaConverter))
         val random = valorConvertido
-         valorConvertido = (random * 100.0).roundToInt() / 100.0
-        _resultado.value = selectMoeda(12)+valorConvertido.toString()
+        valorConvertido = (random * 100.0).roundToInt() / 100.0
+        _resultado.value = selectMoeda(_moedaConverter) + valorConvertido.toString()
     }
 
-    fun moedaReferencia(moeda : LiveData<Int>) : Double{
+    fun moedaReferencia(moeda: LiveData<Int>): Double {
         val moedavalue = when (moeda.value) {
             11 -> 5.11
             12 -> 5.11
@@ -83,8 +80,8 @@ class ConversorViewModel : ViewModel() {
         return moedavalue
     }
 
-    fun selectMoeda(tipo: Int): String {
-        val moedaString = when (tipo) {
+    fun selectMoeda(tipo: LiveData<Int>): String {
+        val moedaString = when (tipo.value) {
             11 -> "R$ "
             12 -> "US$ "
             13 -> "E$ "
@@ -93,7 +90,7 @@ class ConversorViewModel : ViewModel() {
         return moedaString
     }
 
-    fun onButtonMoeda(moeda: Int) : String {
+    fun onButtonMoeda(moeda: Int): String {
         val moedaLabel = when (moeda) {
             11 -> "REAL"
             12 -> "DÓLAR"
@@ -102,9 +99,9 @@ class ConversorViewModel : ViewModel() {
             15 -> "DÓLAR"
             16 -> "EURO"
             else -> " "
-          }
+        }
 
-       return moedaLabel
+        return moedaLabel
     }
 
 }
