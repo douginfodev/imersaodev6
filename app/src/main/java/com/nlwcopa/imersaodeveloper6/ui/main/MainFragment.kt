@@ -34,6 +34,15 @@ class MainFragment : Fragment() {
                     MainFragmentDirections
                         .actionMainFragmentToConversorFragment(11,15)
                 )
+        }
+
+        binding.btnEntrar3.setOnClickListener{
+//            findNavController().navigate(R.id.action_mainFragment_to_conversorFragment)
+            findNavController()
+                .navigate(
+                    MainFragmentDirections
+                        .actionMainFragmentToMovieFragment()
+                )
 
         }
 

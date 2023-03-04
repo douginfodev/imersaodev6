@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_mainFragment_to_conversorFragment"
             app:destination="@id/conversorFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
     </fragment>
     <fragment
         android:id="@+id/conversorFragment"
@@ -52,5 +55,13 @@
         <action
             android:id="@+id/action_moedasFragment_to_conversorFragment"
             app:destination="@id/conversorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.nlwcopa.imersaodeveloper6.ui.movies.MovieFragment"
+        android:label="MovieFragment" >
+        <action
+            android:id="@+id/action_movieFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
 </navigation>
