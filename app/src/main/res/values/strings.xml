@@ -32,6 +32,7 @@
     <string name="tit_ano">ANO:</string>
     <string name="btn_gravar">GRAVAR</string>
     <string name="msg_gravar">FILME GRAVADO COM SUCESSO</string>
+    <string name="msg_error">ERRO AO ADICIONAR FILME</string>
 
 
 

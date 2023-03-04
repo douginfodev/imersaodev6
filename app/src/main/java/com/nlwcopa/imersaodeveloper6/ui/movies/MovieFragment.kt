@@ -8,17 +8,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import com.nlwcopa.imersaodeveloper6.databinding.FragmentConversorBinding
+import com.google.android.material.snackbar.Snackbar
+import com.nlwcopa.imersaodeveloper6.database.AppDatabase
+import com.nlwcopa.imersaodeveloper6.database.dao.MovieDao
 import com.nlwcopa.imersaodeveloper6.databinding.FragmentMovieBinding
-import com.nlwcopa.imersaodeveloper6.ui.conversor.ConversorFragmentArgs
-import com.nlwcopa.imersaodeveloper6.ui.conversor.ConversorFragmentDirections
-import com.nlwcopa.imersaodeveloper6.ui.conversor.ConversorViewModel
+import com.nlwcopa.imersaodeveloper6.repository.DatabaseDatasource
+import com.nlwcopa.imersaodeveloper6.repository.MoviesRepository
 
 class MovieFragment : Fragment() {
     private var _binding: FragmentMovieBinding? = null
     private val binding get() = _binding!!
+
     private lateinit var  movieViewModel: MovieViewModel
+    private lateinit var movieViewModelFactory: MovieViewModelFactory
+    private lateinit var movieRepository : MoviesRepository
+    private lateinit var movieDAO : MovieDao
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,9 +30,16 @@ class MovieFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        val application = requireNotNull(this.activity).application
+        val movieDAO = AppDatabase.getInstance(application).movieDao
+        val repository = DatabaseDatasource(movieDAO)
+
+        //ViewModelFactory
+        val movieViewModelFactory = MovieViewModelFactory(repository,application)
+
         //ViewModel
         val movieViewModel =
-            ViewModelProvider(this).get(MovieViewModel::class.java)
+            ViewModelProvider(this,movieViewModelFactory).get(MovieViewModel::class.java)
 
         this.movieViewModel = movieViewModel
 
@@ -40,9 +51,18 @@ class MovieFragment : Fragment() {
           //  onNavigate()
         //}
 
-        // onClick Moeda Converter
+     // onClick Moeda Converter
         binding.imgBtnGravar.setOnClickListener {
+            val nomeFilme = binding.edtTxtFilme.text.toString()
+            val capa = binding.edtTxtCapa.text.toString()
+            val diretor = binding.edtTxtDiretor.text.toString()
+            val ano = binding.edtTxtAno.text.toString()
+
+            this.movieViewModel.addMovies(0,nomeFilme,capa,diretor,ano)
             Log.i("INFO", "GRAVEI O FILME")
+
+            onClear()
+            Snackbar.make(requireView(),"FILME GRAVADO COM SUCESSO",Snackbar.LENGTH_LONG).show()
         }
 
        // binding.btnconverter.setOnClickListener {
@@ -64,6 +84,13 @@ class MovieFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun onClear(){
+        binding.edtTxtFilme.text.clear()
+        binding.edtTxtCapa.text.clear()
+        binding.edtTxtDiretor.text.clear()
+        binding.edtTxtAno.text.clear()
     }
 
     fun onConvertMoeda(value : Float){
