@@ -138,5 +138,16 @@
             app:layout_constraintStart_toStartOf="@+id/btnEntrar3"
             app:layout_constraintTop_toTopOf="@+id/btnEntrar3" />
 
+        <TextView
+            android:id="@+id/txtViewAula5"
+            style="@style/txtView_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_aula5"
+            app:layout_constraintBottom_toBottomOf="@+id/btnEntrar5"
+            app:layout_constraintEnd_toEndOf="@+id/btnEntrar5"
+            app:layout_constraintStart_toStartOf="@+id/btnEntrar5"
+            app:layout_constraintTop_toTopOf="@+id/btnEntrar5" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

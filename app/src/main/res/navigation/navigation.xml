@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_mainFragment_to_movieFragment"
             app:destination="@id/movieFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_movieListFragment"
+            app:destination="@id/movieListFragment" />
     </fragment>
     <fragment
         android:id="@+id/conversorFragment"
@@ -62,6 +65,14 @@
         android:label="MovieFragment" >
         <action
             android:id="@+id/action_movieFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieListFragment"
+        android:name="com.nlwcopa.imersaodeveloper6.ui.movielist.MovieListFragment"
+        android:label="MovieListFragment" >
+        <action
+            android:id="@+id/action_movieListFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
 </navigation>

@@ -24,6 +24,6 @@ interface MoviesRepository {
 
     suspend fun deleteAllMovies()
 
-    suspend fun getAllMovies(): LiveData<List<Movies>>
+    fun getAllMovies(): LiveData<List<Movies>>
 
 }

@@ -46,6 +46,15 @@ class MainFragment : Fragment() {
 
         }
 
+        binding.btnEntrar5.setOnClickListener{
+            findNavController()
+                .navigate(
+                    MainFragmentDirections
+                        .actionMainFragmentToMovieListFragment()
+                )
+
+        }
+
         val root : View = binding.root
 
         return root

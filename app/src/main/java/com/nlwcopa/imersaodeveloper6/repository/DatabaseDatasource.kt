@@ -52,7 +52,7 @@ class DatabaseDatasource(
         movieDao.deleteAll()
     }
 
-    override suspend fun getAllMovies(): LiveData<List<Movies>> {
+    override fun getAllMovies(): LiveData<List<Movies>> {
         return movieDao.getAll()
     }
 
